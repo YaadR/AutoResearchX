@@ -1,0 +1,8 @@
+timestamp	status	val_score	val_rollout_nmse	complexity	reasoning_quote
+2026-05-20T11:59:39+0300	kept	1.442373370	1.053776468	84	Baseline zero-init MLP + polynomial STLSQ establishes the first valid reference; step forcing is the dominant rollout failure, so future work should target discontinuous-input generalization and physically structured friction terms.
+2026-05-20T12:41:59+0300	discarded	1000000000.000000000	1000000000.000000000	239	Degree-3 relative-coordinate SINDy with exact kinematics over-expanded the library; validation overflowed and the learned rollout diverged, so the idea is rejected despite physically cleaner position rows.
+2026-05-20T12:52:41+0300	kept	1.401344734	1.014197678	67	Degree-2 relative-coordinate SINDy with exact kinematics improved score and reduced complexity versus baseline; step forcing worsened, but the lower average rollout and simpler model make it the new benchmark.
+2026-05-20T13:04:37+0300	discarded	1000000000.000000000	1000000000.000000000	116	Polynomial plus unary friction terms produced a dense high-gain vector field and diverged in validation; direct tanh/drag features are too ill-conditioned with the current smoother derivatives.
+2026-05-20T14:22:20+0300	discarded	1.419123891	1.026285235	74	current_best_verify: Re-run the current best degree-2 relative-coordinate model to estimate CPU-run variance. Result score=1.419123891, rollout=1.026285235, deriv=0.357575969, worst=2.294446641, complexity=74.
+2026-05-20T14:32:06+0300	kept	1.395147556	1.007294894	73	threshold_045: Raise STLSQ threshold to prune weak terms while preserving relative coordinates and exact kinematics. Result score=1.395147556, rollout=1.007294894, deriv=0.352982485, worst=2.266070414, complexity=73.
+
