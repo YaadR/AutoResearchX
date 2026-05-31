@@ -14,7 +14,7 @@ controlled double-mass benchmark:
 * multiple input families: multisine, chirp, step, PRBS-like square waves, pulses
 * validation includes held-out trajectories across every input family
 
-The agent should optimize train.py against evaluate_candidate(). Lower
+The agent should optimize against evaluate_candidate(). Lower
 val_score is better. The score includes average rollout error, derivative error,
 worst-case force-family rollout error, and sparse-model complexity.
 """
@@ -42,7 +42,7 @@ TRAIN_PATH = DATA_DIR / "train.npz"
 VAL_PATH = DATA_DIR / "val.npz"
 META_PATH = DATA_DIR / "metadata.json"
 
-TIME_BUDGET = 300  # seconds. Fixed wall-clock budget for train.py experiments.
+TIME_BUDGET = 300  # seconds. Fixed wall-clock budget for experiments.
 DT = 0.02
 T_FINAL = 12.0
 T_EVAL = np.arange(0.0, T_FINAL + 0.5 * DT, DT, dtype=np.float64)

@@ -82,11 +82,7 @@ For each experiment:
 
 1. Start from the currently kept best `train/` configuration.
 2. Make one coherent change or a very small group of related changes.
-3. Run:
-
-```bash
-uv run train/train.py --no-open-dashboard
-```
+3. Run your experiment.
 
 4. Inspect:
    - `outputs/summary.json`
@@ -102,12 +98,7 @@ uv run train/train.py --no-open-dashboard
    - `discarded`
    - `verification`
 6. Update the last row in `results.tsv` accordingly and write a clear note.
-7. Regenerate the history chart:
-
-```bash
-uv run train/train.py --render-history-only --no-open-dashboard
-```
-
+7. Regenerate the history chart.
 8. If the run is kept, copy the current `train/` directory and outputs into `runs/best/`.
 
 ## Acceptance rule
@@ -133,3 +124,4 @@ For small gains, rerun once to verify stability.
 5. Compare sparse optimizers.
 6. Improve worst-case force-family robustness.
 7. Only then attempt more complex mixed libraries or rollout-aware refinement.
+ibraries or rollout-aware refinement.

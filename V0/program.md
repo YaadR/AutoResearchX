@@ -41,22 +41,6 @@ You are not limited to a predefined list of parameters. You are encouraged to in
 ### 4. SOTA Research & External Knowledge
 - **Web Research for SOTA:** You are explicitly encouraged to use your web search tools to research the latest papers, documentation for PySINDy, or PINN implementation details. If you encounter a bottleneck, look for how researchers at the frontier are solving similar problems.
 
-## Zero-Init Policy
-
-The starting `train.py` intentionally avoids assumptions.
-
-It starts with:
-
-- plain MLP
-- no residual MLP
-- no Fourier features
-- polynomial-only SINDy
-- STLSQ
-- degree 2
-- conservative sparse threshold
-
-The wider PINN and PySINDy tools are available for you to test, but they are not activated as initial assumptions.
-
 ## Hard Benchmark Details
 
 `prepare.py` generates a difficult controlled double-mass benchmark with:
@@ -95,39 +79,17 @@ Each run generates the following visualizations:
 - `outputs/research_progress.html` — interactive optimization history (hoverable, shows kept/discarded/pending/best traces)
 - `outputs/research_progress.png` — static version of optimization history
 
-## Setup & Execution Commands
-
-**Install dependencies:**
-```bash
-uv sync
-```
-
-**Prepare benchmark data:**
-```bash
-uv run prepare.py --force
-```
-
-**Run one experiment:**
-```bash
-uv run train/train.py --no-open-dashboard
-```
-
-**Regenerate progress visualization only** (after updating statuses in `results.csv` and `results_concise.csv`):
-```bash
-uv run train/train.py --render-history-only --no-open-dashboard
-```
-
 ## Workflow: The Iterative Loop
 
 1. **Analyze:** Inspect the previous "Best" run and current failure modes (e.g., instability in certain forcing cases, high complexity, or poor derivative matching).
 2. **Hypothesize:** Formulate a technical reason for a change (e.g., "The current model fails on PRBS forcing due to high-frequency transients; introducing SIREN activation may help").
-3. **Innovate:** Modify files within the `train/` directory. You may refactor `train/train.py`, create debug scripts, add utilities, or write exploratory code as needed. You are expected to write new code, classes, and logic—not just flip booleans. Use your web search capabilities if you need to look up specific SOTA implementations or documentation.
-4. **Execute:** `uv run train/train.py --no-open-dashboard`.
+3. **Innovate:** Modify files within the `train/` directory. You may create debug scripts, add utilities, or write exploratory code as needed. You are expected to write new code, classes, and logic—not just flip booleans. Use your web search capabilities if you need to look up specific SOTA implementations or documentation.
+4. **Execute:** Run your experiment.
 5. **Document & Maintain:** 
    - Update `results.csv` with your technical conclusion and reasoning.
    - Update `results_concise.csv` with a high-signal summary for visualization.
    - Clean up any temporary test files or debug artifacts created in the `train/` directory during this iteration.
-6. **Sync:** `uv run train/train.py --render-history-only --no-open-dashboard`.
+6. **Sync:** Regenerate progress visualization only.
 
 ## Loop Continuation & Waiting Strategy
 
@@ -175,3 +137,6 @@ If you detect that improvements are stagnating (flat or marginal gains over seve
 - **Development Hygiene:** You may create temporary files for testing, debugging, validation, or exploratory analysis. Clean up and delete these files when no longer needed. Keep the project directory orderly and free from unnecessary artifacts.
 - **Continuous Improvement:** Always strive to improve `val_score` and model quality. Be creative and efficient in your approach—combine multiple insights, innovate with new loss functions, or propose entirely new architectures if the situation warrants.
 - **Project Scalability:** As the project grows (more code, more runs, more outputs), work intelligently to avoid context overflow. Summarize findings, delete obsolete runs, consolidate logs, and maintain clear organization. Do not let project size paralyze decision-making; stay focused on the macro loop.
+not let project size paralyze decision-making; stay focused on the macro loop.
+ntext overflow. Summarize findings, delete obsolete runs, consolidate logs, and maintain clear organization. Do not let project size paralyze decision-making; stay focused on the macro loop.
+not let project size paralyze decision-making; stay focused on the macro loop.
