@@ -1,4 +1,4 @@
-# PINN-SINDy AutoResearch — Zero-Init Hard Benchmark
+# {{PROJECT_NAME}} — {{PROJECT_SUBTITLE}}
 
 ## Quick Start
 
@@ -11,8 +11,8 @@
 | `program.md` | **Primary instructions:** Research loop workflow, objectives, constraints, and all operational guidance. Start here. |
 | `agent_id_junior.md` | Researcher persona: junior researcher role with directed methodology and structured exploration. |
 | `agent_id_senior.md` | Researcher persona: senior researcher role with strategic innovation and deep expertise principles. |
-| `user_takes.md` | Real-time ledger for user directives and mid-loop feedback. Consult frequently during experiments. |
-| `train/` | Your primary laboratory directory. Full authority to create, modify, and delete any files within for training, debugging, and experimentation. Contains `scripts/` and any other support files you create. |
+| `user_notes.md` | Real-time ledger for user directives and mid-loop feedback. Consult frequently during experiments. |
+| `train/` | Your primary laboratory directory. Full authority to create, modify, and delete any files within for training, debugging, and experimentation. |
 | `prepare.py` | Fixed evaluation harness (Read-only). Do not edit. |
 | `results.csv` | All trials with detailed reasoning and conclusions. |
 | `results_concise.csv` | Minimal metrics for visualization and quick reference. |
@@ -25,19 +25,10 @@
 # Setup
 uv sync
 
-# Prepare benchmark data
+# Prepare benchmark data / environment
 uv run prepare.py --force
 ```
 
 ---
 
 **Next:** Open [`program.md`](program.md) and follow its instructions for the full research methodology.
-```
-
-
----
-
-**Next:** Open [`program.md`](program.md) and follow its instructions for the full research methodology.
-```
-the full research methodology.
-```
