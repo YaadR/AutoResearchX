@@ -23,7 +23,6 @@ project_folder/
 ├── agent_id_junior.md                 # Junior researcher role: directed, structured execution
 ├── agent_id_senior.md                 # Senior researcher role: strategic, deep innovation
 ├── user_notes.md                      # User's mid-loop feedback and directives
-├── user_takes.md                      # Real-time ledger of user requests during the loop
 ├── prepare.py                         # Fixed evaluation harness (read-only)
 ├── train/                             # Agent's laboratory: full authority to innovate
 ├── train/scripts/                     # Supporting scripts (utilities, analysis tools)
@@ -46,9 +45,7 @@ project_folder/
 
 - **`agent_id_senior.md`** — Role definition for autonomous, strategic research. Emphasizes deep expertise, bold innovation, creative pivots, and principled decision-making. Best for exploratory or high-creativity tasks.
 
-- **`user_notes.md`** — User's narrative feedback and strategic observations. Not part of the loop; used for human-readable documentation.
-
-- **`user_takes.md`** — Dynamic ledger of specific user requests and mid-loop course corrections. Consulted frequently by the agent during execution.
+- **`user_notes.md`** — User's narrative feedback and strategic observations. And part of the loop; used for human-readable documentation.
 
 ### Execution & Benchmarking
 
@@ -104,7 +101,7 @@ This cycle **repeats continuously** until the user stops the agent, integrating 
 
 ### 4. Strategic Flexibility
 - Role selection (junior vs. senior) tunes the agent's approach to task scope and creativity level.
-- User mid-loop feedback (`user_takes.md`) integrates without halting the loop.
+- User mid-loop feedback (`user_notes.md`) integrates without halting the loop.
 - Stagnation recovery protocols trigger bold, creative pivots when marginal gains plateau.
 
 ## Using AutoResearch on a New Problem
