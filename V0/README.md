@@ -22,11 +22,17 @@
 ## Key Commands
 
 ```bash
-# Setup
+# Setup: Install dependencies
 uv sync
 
-# Prepare benchmark data / environment
+# Prepare: Setup benchmark data or environment
 uv run prepare.py --force
+
+# Train: Execute the research/training logic
+uv run train/main.py
+
+# Evaluate: Run the fixed evaluation harness
+uv run prepare.py --eval
 ```
 
 ---

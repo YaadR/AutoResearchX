@@ -54,6 +54,19 @@ val_score = {{PRIMARY_ERROR_TERM}}
 
 Lower is better (unless specified otherwise).
 
+## Key Commands
+
+```bash
+# Preparation
+uv run prepare.py --force
+
+# Research/Training
+uv run train/main.py
+
+# Evaluation
+uv run prepare.py --eval
+```
+
 ## Workflow: The Iterative Loop
 
 1. **Analyze:** Inspect the previous "Best" run and current failure modes (e.g., instability, high complexity, or poor generalization).

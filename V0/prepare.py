@@ -44,6 +44,11 @@ def evaluate_candidate(candidate_dir: Path) -> EvaluationResult:
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--force", action="store_true", help="Force preparation")
+    parser.add_argument("--eval", action="store_true", help="Run evaluation on current candidate")
     args = parser.parse_args()
     
-    prepare_environment(force=args.force)
+    if args.eval:
+        result = evaluate_candidate(Path("train"))
+        print(f"Evaluation Score: {result.score}")
+    else:
+        prepare_environment(force=args.force)
